@@ -1,0 +1,76 @@
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "641eb123b4msh59915efd2d1bbeep1e4091jsn13d10a5b75ae",
+    "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+  },
+};
+
+fetch(
+  "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=mumbai",
+  options
+)
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(response);
+
+    cloud_pct.innerHTML = response.cloud_pct;
+    // temp.innerHTML = response.temp;
+    // feels_like.innerHTML = response.feels_like;
+    humidity.innerHTML = response.humidity;
+    // min_temp.innerHTML = response.min_temp;
+    // max_temp.innerHTML = response.max_temp;
+    wind_speed.innerHTML = response.wind_speed;
+    // wind_degrees.innerHTML = response.wind_degrees;
+    // sunrise.innerHTML = response.sunrise;
+    // sunset.innerHTML = response.sunset;
+  })
+  .catch((err) => console.error(err));
+
+const options1 = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "641eb123b4msh59915efd2d1bbeep1e4091jsn13d10a5b75ae",
+    "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+  },
+};
+
+fetch("https://weatherapi-com.p.rapidapi.com/current.json?q=mumbai", options1)
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(response);
+
+    // name.innerHTML = response.name;
+    // region.innerHTML = response.region;
+    // country.innerHTML = response.country;
+    // lat.innerHTML = response.lat;
+    // lon.innerHTML = response.lon;
+    // tz_id.innerHTML = response.tz_id;
+    // localtime_epoch.innerHTML = response.localtime_epoch;
+    // localtime.innerHTML = response.localtime;
+    // current.innerHTML = response.current;
+    // last_updated_epoch.innerHTML = response.last_updated_epoch;
+    // last_updated.innerHTML = response.last_updated;
+    // temp_c.innerHTML = response.temp_c;
+    // temp_f.innerHTML = response.temp_f;
+    // is_day.innerHTML = response.is_day;
+    // condition.innerHTML = response.condition;
+    // wind_mph.innerHTML = response.wind_mph;
+    wind_kph.innerHTML = response.wind_kph;
+    // wind_degree.innerHTML = response.wind_degree;
+    // wind_dir.innerHTML = response.wind_dir;
+    // pressure_mb.innerHTML = response.pressure_mb;
+    // pressure_in.innerHTML = response.pressure_in;
+    // precip_mm.innerHTML = response.precip_mm;
+    // precip_in.innerHTML = response.precip_in;
+    // humidity.innerHTML = response.humidity;
+    cloud.innerHTML = response.cloud;
+    // feelslike_c.innerHTML = response.feelslike_c;
+    // feelslike_f.innerHTML = response.feelslike_f;
+    // vis_km.innerHTML = response.vis_km;
+    // vis_miles.innerHTML = response.vis_miles;
+    // uv.innerHTML = response.uv;
+    // gust_mph.innerHTML = response.gust_mph;
+    // gust_kph.innerHTML = response.gust_kph;
+  })
+  .catch((err) => console.error(err));
